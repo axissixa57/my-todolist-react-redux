@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-import { addTodo as addTodoAction } from '../actions/todos';
 
 export class AddTodoUI extends Component {
     state = {
@@ -43,17 +40,4 @@ export class AddTodoUI extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addTodo: state => {
-            dispatch(addTodoAction(state))
-        }
-    }
-}
-
-const AddTodo = connect(
-    null,
-    mapDispatchToProps
-)(AddTodoUI)
-
-export default AddTodo;
+export default AddTodoUI;

@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class TodoItem extends Component {
   render() {
     const { todo, editTodo, toggleTodo, deleteTodo } = this.props;
+
     const { id, title } = todo;
+
     return (
       <li className="todo-item">
         <input
@@ -20,14 +22,11 @@ class TodoItem extends Component {
         <button
           className="edit"
           onClick={(e) => {
-            
             if (e.target.parentNode.classList.contains('editing')) {
-              // label.textContent = todo.title
               e.target.textContent = 'Изменить';
               e.target.parentNode.classList.remove('editing');
 
-              editTodo({...todo, title: this.refs.textfieldInput.value});
-              //console.log(todo, this.refs.textfieldInput.value)
+              editTodo({ ...todo, title: this.refs.textfieldInput.value });
             } else {
               this.refs.textfieldInput.value = title;
               e.target.textContent = 'Сохранить';

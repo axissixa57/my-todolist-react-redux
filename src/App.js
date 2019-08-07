@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Todos from './containers/Todos';
-import AddTodo from './components/AddTodo';
+import AddTodo from './containers/AddTodo';
 
 function App() {
   return (
